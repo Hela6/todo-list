@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #333;
+  background: #202020;
   color: hsl(200, 100%, 90%);
   max-width: 400px;
   padding: 1rem;
@@ -26,17 +26,17 @@ body {
 }
 
 .btn {
-  background: hsl(240, 42%, 75%);
+  background: hsl(258, 40%, 57%);
   color: hsl(180, 4%, 5%);
-  padding: 0.25em 0.5em;
-  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
   cursor: pointer;
   outline: none;
 }
 
 .btn:hover,
 .btn:focus-visible {
-  background: hsl(254, 25%, 84%);
+  background: hsl(262, 31%, 66%);
 }
 
 .btn.btn-danger {
@@ -54,8 +54,8 @@ body {
 .new-item-form input {
   outline: none;
   background: hsl(180, 2%, 12%);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
   color: hsl(206, 6%, 75%);
 }
 
@@ -128,7 +128,7 @@ body {
   background: hsl(200, 100%, 80%);
 }
 
-.list li:has(input:checked) label::before {
+.list li input:checked + label::before {
   content: "✔";
   background: hsl(206, 19%, 93%);
   color: hsl(180, 3%, 6%);
@@ -136,6 +136,6 @@ body {
   font-weight: bold;
 }
 
-.list li:has(input:checked) label:hover::before {
-  background: hsl(202, 6%, 75%);
+.list-checkbox {
+  color: red;
 }
