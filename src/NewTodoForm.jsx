@@ -19,7 +19,7 @@ export function NewTodoForm({ onSubmit }) { //onSubmit -> props
 
     return (
         <form onSubmit={handleSubmit} className="new-item-form">
-            <div className="form-row task-title">
+            <div className="form-row ">
                 <label htmlFor="title">Title</label>
                 <input
                     value={title}
