@@ -2,28 +2,48 @@ import { useState } from "react"
 import PropTypes from "prop-types";
 
 export function NewTodoForm({ onSubmit }) { //onSubmit -> props
-    const [newItem, setNewItem] = useState("")
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("");
+    const [dueDate, setDueDate] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault()
-        if (newItem === "") return
+        if (title === "") return;
 
-        onSubmit(newItem)
+        onSubmit(title, description, dueDate)
 
-        setNewItem("")
+        setTitle("");
+        setDescription("");
+        setDueDate("");
     }
 
     return (
         <form onSubmit={handleSubmit} className="new-item-form">
-            <div className="form-row">
-                <label htmlFor="item">New Item</label>
+            <div className="form-row task-title">
+                <label htmlFor="title">Title</label>
                 <input
-                    value={newItem}
-                    onChange={e => setNewItem(e.target.value)}
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
                     type="text"
-                    id="item" />
+                    id="title" />
             </div>
-            <button className="btn">Add</button>
+            <div className="form-row task-description">
+                <label htmlFor="description">Description</label>
+                <input
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                    type="text"
+                    id="description" />
+            </div>
+            <div className="form-row task-dueDate">
+                <label htmlFor="dueDate">Due date</label>
+                <input
+                    value={dueDate}
+                    onChange={e => setDueDate(e.target.value)}
+                    type="text"
+                    id="dueDate" />
+            </div>
+            <button className="btn form-btn">Add</button>
         </form>
     )
 }

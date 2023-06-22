@@ -16,11 +16,13 @@ export default function App() {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
   }, [todos]);
 
-  function addTodo(title) {
+  function addTodo(title, description, dueDate) {
     setTodos(currentTodos => {
       const newTodo = {
         id: Date.now(),
         title,
+        description,
+        dueDate,
         completed: false
       };
 
@@ -60,7 +62,9 @@ App.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired,
+      description: PropTypes.string.isRequired,
+      dueDate: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
     })
   )
 };

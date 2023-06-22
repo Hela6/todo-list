@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
+export function TodoItem({ completed, id, title, description, dueDate, toggleTodo, deleteTodo }) {
     return (
         <li className="list-item">
             <input
@@ -11,8 +11,10 @@ export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
                 className="list-checkbox"
             />
             <label htmlFor={`checkbox-${id}`} className="list-label">
-                {title}
+                <h3 className="task-title">{title}</h3>
             </label>
+            <p className="task-description">{description}</p>
+            <p className="task-dueDate">{dueDate}</p>
             <button
                 onClick={() => deleteTodo(id)}
                 className="btn btn-danger"
@@ -29,4 +31,6 @@ TodoItem.propTypes = {
     title: PropTypes.string.isRequired,
     toggleTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
+    description: PropTypes.string.isRequired,
+    dueDate: PropTypes.string.isRequired,
 };
