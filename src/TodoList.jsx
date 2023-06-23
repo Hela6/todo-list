@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export function TodoList({ todos, toggleTodo, deleteTodo }) {
     return (
         <ul className="list">
-            {todos.length === 0 && "No Todos"}
+            {todos.length === 0 && "enter a new task or memo to clear your mind !"}
             {todos.map(todo => {
                 return (
                     <TodoItem
