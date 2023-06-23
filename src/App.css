@@ -3,20 +3,27 @@
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
-  
 }
 
 body {
   background: #202020;
   color: hsl(200, 100%, 90%);
-  width: 60%;
+  width: 80%;
   padding: 5%;
   margin: 0 auto;
   font-size: 18px;
 }
 
-.new-item-form {
+.new-item-form, 
+.form-row,
+.header,
+.list,
+.list li label,
+.list li label::before {
   display: flex;
+}
+
+.new-item-form {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -24,7 +31,6 @@ body {
 }
 
 .form-row {
-  display: flex;
   flex-direction: column;
   gap: 0.1rem;
 }
@@ -49,27 +55,18 @@ body {
   border: none;
 }
 
-.form-btn {
-  justify-content: flex-start;
-}
-
 .btn:hover,
 .btn:focus-visible {
   background: #f6f7f8;
 }
 
 .btn.btn-danger {
-  margin: auto 0;
   background: #38a3a5;
-  border-radius: 20px;
-  color: black;
-  border: none;
 }
 
 .btn.btn-danger:hover,
 .btn.btn-danger:focus-visible {
-  background: #105253;
-  color: #f6f7f8;
+  background: #9ae3e4;
 }
 
 .new-item-form input {
@@ -78,11 +75,13 @@ body {
   border-top: #202020;
   border-left: #202020;
   border-right: #202020;
+  border-bottom: #a0c9d3 1px solid;
   padding: 0.5em 1em;
   color: hsl(206, 6%, 75%);
 }
 
 .header {
+  justify-content: center;
   font-size: 1.5rem;
   margin-top: 7rem;
   margin-bottom: 2rem;
@@ -91,7 +90,6 @@ body {
 .list {
   margin: 0;
   padding: 0;
-  margin-left: 1rem;
   list-style: none;
 }
 
@@ -100,7 +98,6 @@ body {
 }
 
 .list {
-  display: flex;
   flex-direction: column;
 }
 
@@ -115,7 +112,6 @@ body {
 }
 
 .list li label {
-  display: flex;
   cursor: pointer;
   align-items: center;
 }
@@ -140,7 +136,6 @@ body {
   height: 0.9rem;
   background: hsl(200, 100%, 90%);
   border-radius: 0.25em;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -152,44 +147,47 @@ body {
 .list li input:checked + label::before {
   content: "✔";
   background: hsl(206, 19%, 93%);
-  color: hsl(180, 3%, 6%);
+  color: black;
   font-size: 0.75rem;
   font-weight: bold;
 }
 
-  /* responsive for tablets and smartphones__________________________________________________________________________ */
-  @media screen and (max-width: 1268px) {
-    .new-item-form {
+ /* responsive for smaller screens__________________________________________________________________________ */
+ @media screen and (max-width: 1568px) {
+  body {
+    width: 100%;
+  }
+  }
+
+  /* responsive for smaller screens__________________________________________________________________________ */
+  @media screen and (max-width: 1068px) {
+    .list li {
+      display: flex;
       flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
     }
 
+    .task-title, p {
+      margin: 0 auto 5px 5px;
+    }
+
+    .btn.btn-danger {
+      margin: 0px 0px 5px auto;
+    }
+  }
+  /* responsive for smartphones__________________________________________________________________________ */
+  @media screen and (max-width: 468px) {
     body {
-      width: 95%;
-      padding: 0.5rem;
+      padding: 1rem;
       font-size: 14px;
     }
 
     .header {
       margin-top: 2rem;
-      display:flex;
-      justify-content: center;
     }
 
-    .list li {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 30px;
-      border-radius: 20px;
-      background: linear-gradient(0deg,#38a3a500,#38a3a5 90%);
-      border-bottom: none;
-    }
-
-    .task-title {
-      color: #202020;
-    }
-
-    .btn.btn-danger {
-      margin: 0px 0px 5px auto;
+    .form-btn {
+      margin-top: 25px;
     }
     }

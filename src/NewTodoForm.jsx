@@ -27,14 +27,6 @@ export function NewTodoForm({ onSubmit }) { //onSubmit -> props
                     type="text"
                     id="title" />
             </div>
-            <div className="form-row task-description">
-                <label htmlFor="description">Description</label>
-                <input
-                    value={description}
-                    onChange={e => setDescription(e.target.value)}
-                    type="text"
-                    id="description" />
-            </div>
             <div className="form-row task-dueDate">
                 <label htmlFor="dueDate">Due date</label>
                 <input
@@ -42,6 +34,14 @@ export function NewTodoForm({ onSubmit }) { //onSubmit -> props
                     onChange={e => setDueDate(e.target.value)}
                     type="text"
                     id="dueDate" />
+            </div>
+            <div className="form-row task-description">
+                <label htmlFor="description">Description</label>
+                <input
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                    type="text"
+                    id="description" />
             </div>
             <button className="btn form-btn">Add</button>
         </form>
